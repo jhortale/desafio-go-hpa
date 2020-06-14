@@ -18,7 +18,7 @@ spec:
         - name: go-hpa
           image: jhortale/go-hpa
           ports:
-            - containerPort: 8000
+            - containerPort: 80
           resources:
             requests:
               # memory: "100Mi"
