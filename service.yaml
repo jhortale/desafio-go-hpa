@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: go-hpa
+  labels:
+    run: go-hpa
+spec:
+  selector:
+    run: go-hpa
