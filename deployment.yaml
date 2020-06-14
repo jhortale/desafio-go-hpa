@@ -2,27 +2,23 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: go-hpa
-  labels:
-    app: go-hpa
 spec:
-  replicas: 1
   selector:
     matchLabels:
-      app: go-hpa
+      run: go-hpa
+  replicas: 1
   template:
     metadata:
       labels:
-        app: go-hpa
+        run: go-hpa
     spec:
       containers:
-        - name: go-hpa
+        - name: pgo-hpa
           image: jhortale/go-hpa
           ports:
             - containerPort: 80
           resources:
-            requests:
-              # memory: "100Mi"
-              cpu: "50m"
             limits:
-              cpu: "100m"
-            # memory: "200Mi"
+              cpu: 100m
+            requests:
+              cpu: 50m
