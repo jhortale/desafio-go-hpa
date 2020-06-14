@@ -20,5 +20,5 @@ func HttpServer(w http.ResponseWriter, r *http.Request) {
 
 func main() {
 	http.HandleFunc("/", HttpServer)
-	http.ListenAndServe(":80", nil)
+	http.ListenAndServe(":8000", nil)
 }
