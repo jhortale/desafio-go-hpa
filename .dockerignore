@@ -1,0 +1,5 @@
+bin
+Dockerfile
+*.md
+.gitignore
+cloudbuild.yaml
