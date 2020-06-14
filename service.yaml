@@ -5,5 +5,8 @@ metadata:
   labels:
     run: go-hpa
 spec:
+  type: ClusterIP
+  ports:
+    - port: 8000
   selector:
     run: go-hpa

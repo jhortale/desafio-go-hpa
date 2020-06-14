@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"math"
+	"net/http"
 )
 
 func sqrt() string {
@@ -13,6 +14,11 @@ func sqrt() string {
 	return "Code.education Rocks!"
 }
 
+func HttpServer(w http.ResponseWriter, r *http.Request) {
+	fmt.Fprintf(w, sqrt())
+}
+
 func main() {
-	fmt.Println(sqrt())
+	http.HandleFunc("/", HttpServer)
+	http.ListenAndServe(":8000", nil)
 }
