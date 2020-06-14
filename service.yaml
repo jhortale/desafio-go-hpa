@@ -5,8 +5,7 @@ metadata:
   labels:
     run: go-hpa
 spec:
-  type: LoadBalancer
   ports:
-    - port: 8000
+    - port: 80
   selector:
     run: go-hpa
